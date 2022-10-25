@@ -1,0 +1,2 @@
+# Composite
+- let's to create a class hierarchy in which some subclasses define primitive objects (e.g., Button) and other classes define composite objects (CompositeView) that assemble primitives into more complex objects.
