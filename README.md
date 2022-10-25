@@ -3,7 +3,8 @@
 ## Intro
 
 - `Design patterns` are the descriptions of communicating objects and classes that are customised to solve a general design problem in a particular context.
-
+- `Object Modeling Technique` (OMT) is real world based modeling approach for software modeling and designing. It was developed basically as a method to develop object-oriented systems and to support object-oriented programming. It describes the static structure of the system.
+[OMT](https://www.geeksforgeeks.org/software-engineering-object-modeling-technique-omt)
 
 ## MVC (Model/View/Controller)
 
