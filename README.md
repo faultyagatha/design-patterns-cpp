@@ -35,3 +35,5 @@ The View-Controller relationship use `Strategy pattern`:
 
 
 
+
+
