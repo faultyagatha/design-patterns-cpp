@@ -21,13 +21,23 @@ The most of patterns are in the object scope.
 
 3. Whether the patterns are used together, e.g., composite often used with iterator and visitor.
 
-### Run-time vs Compile-time
+### Class inheritance vs Object composition
 
-1. Compile-time:
-- class inheritance 
+1. Class inheritance: 
+- `white-box reuse`: the internals of parent classes are visible to subclasses (breaks encapsulation)
+- defined at compile-time, inherited implementation cannot be changed at run-time
+- allows for dynamic binding (`polymorphism: let's you substitute objects that have identical interfaces for each other at run-time`)
+- makes it easier to modify the implementation being reused
+- every change in parent would force the changes in children (inherit only from abstract classes!!)
 
-2. Run-time:
-- dynamic binding (`polymorphism: let's you substitute objects that have identical interfaces for each other at run-time`)
+2. Object composition:
+- `black-box reuse`: no internal details of objects are visible (does not break encapsulation)
+- assembling or composing objects to get more complex functionality
+- defined dynamically at run-time via objects acquiring references to other objects
+
+> `Program to an interface, not an implementation`. Do not declare variables to be instances of particular concrete classes. Instead, commit only to an interface defined by an abstract class. Use creational patterns for object instantiation.
+
+`Delegation` is a process when an object delegates operations to its delegate. It makes it easy to compose behaviours at run-time and to change the way they are composed. `State`, `Strategy`, `Visitor` use delegation.
 
 ## MVC (Model/View/Controller)
 
