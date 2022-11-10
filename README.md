@@ -73,6 +73,14 @@ The most of patterns are in the object scope.
 5. Algorithmic dependencies --> objects that depend on algorithms will have to change when an algorithm changes. 
 - Solution: use `Builder`, `Iterator`, `Strategy`, `Visitor`.
 
+6. Tight coupling --> makes classes hard to reuse in isolation. Leads to monolithic systems that are hard to reuse, learn, port, and modify.  
+- Solution: use `Abstract Factory`, `Bridge`, `Chain of Responsibility`, `Command`, `Facade`, `Mediator`, `Observer`.
+
+7. Extending functionality by subclassing --> can lead to explosion of classes.
+- Solution: use `Bridge`, `Chain of Responsibility`, `Composite`, `Decorator`, `Observer`, `Strategy`.
+
+8. Inability to alter classes conveniently --> e.g., by using commercial libraries, etc.
+- Solution: use `Adaptor`, `Decorator`, `Visitor`.
 
 ## MVC (Model/View/Controller)
 
