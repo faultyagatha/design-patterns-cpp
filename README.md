@@ -39,6 +39,41 @@ The most of patterns are in the object scope.
 
 `Delegation` is a process when an object delegates operations to its delegate. It makes it easy to compose behaviours at run-time and to change the way they are composed. `State`, `Strategy`, `Visitor` use delegation.
 
+### Aggregation vs Acquaintance
+
+`Aggregation` implies that one object owns or is responsible for another object (object is part of another object).
+- strong coupling
+- objects are resposible for each other te
+
+`Acquaintance` (also, association) implies that an object only knows of another object (object is using another object). 
+- weak coupling (mostly, created at run-time)
+- objects are not resposible for each other
+- more flexible but makes code difficult to read
+
+> In C++, aggregation is implemented either by defining member variables that are real instances or (most commonly) as pointers or references to instances.
+
+> In C++, acquantance is implemented with pointers and references.
+
+> `Composite` and `Decorator` are useful in building complex run-time structures. `Observer` is used to build run-time structures but brings up the difficulty of code understanding.  
+
+### Common causes of redesign
+
+1. Creating an object by specifying a class explicitly. It commits us to a particular implementation instead of a particular interface.
+- Solution: use `Abstract Factory`, `Factory`, `Prototype`.
+
+2. Dependence on specific operations. It commits you to one way of satisfying a request. 
+- Solution: use `Chain of Responsibility`, `Command`.
+
+3. Dependence on hardware and software platform --> harder to port to other platforms.
+- Solution: use `Abstract Factory`, `Bridge`.
+
+4. Dependence on object representations or implementations --> clients might need to be changed when the object changes. Hiding information from clients keeps changes from cascading. 
+- Solution: use `Abstract Factory`, `Bridge`, `Memento`, `Proxy`.
+
+5. Algorithmic dependencies --> objects that depend on algorithms will have to change when an algorithm changes. 
+- Solution: use `Builder`, `Iterator`, `Strategy`, `Visitor`.
+
+
 ## MVC (Model/View/Controller)
 
 1. Model: 
