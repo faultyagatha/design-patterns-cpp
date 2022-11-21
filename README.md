@@ -82,6 +82,25 @@ The most of patterns are in the object scope.
 8. Inability to alter classes conveniently --> e.g., by using commercial libraries, etc.
 - Solution: use `Adaptor`, `Decorator`, `Visitor`.
 
+## OMT Notation (customised)
+
+### Class relationship
+
+1. `An object reference representing a part-of or aggregation relationship`:
+- is indicated by an arrow headed line with a diamond at the base
+- the arrow points to the class that is aggregated (e.g., Shape)
+- an arrow headed line without the diamond denotes acquaintance (e.g., a LineShape keeps a reference to a Color object, which other shapes may share). 
+- a name for the reference may appear near the base to distinguish it from other references
+
+2. `Which classes instantiate which others` (the "creates" relationship)
+- a dashed arrowheaded line is used to indicate this (OMT doesn't natively support it)
+- the arrow points to the class that's instantiated. (e.g., CreationTool creates LineShape objects).
+
+3. `More than one relationship` 
+- is denoted by a filled circle 
+- when the circle appears at the head of a reference, it means multiple objects are being referenced or aggregated (e.g., Drawing aggregates multiple objects of type Shape).
+
+
 ## MVC (Model/View/Controller)
 
 1. Model: 
@@ -115,3 +134,15 @@ The View-Controller relationship use `Strategy pattern`:
 - describes how to encapsulate and save the internal state of an object so that the object can be restored to that state later
 
 
+## Creational Patterns
+
+- abstract the instantiation process
+- help to make a system independent of how its objects are created, composed, and represented
+- `class creational patterns` use inheritance to vary the class that is instantiated
+- `object creational patterns` delegate instantiation to another object
+- become inportant as system evolve to depend more on object composition than class inheritance
+- they shif the emphasis away from hard-coding a fixed set of behaviours towards defining a smaller set of fundamental behaviours that can be composed into any number of more complex ones. 
+- 2 recurring themes:
+    - 1) creational patterns all encapsulate knowledge about which concrete classes the system uses
+    - 2) hide how instances of these classes are created and put together (`all the system knows about the objects is their interfaces`) -->
+- give a lot of flexibility for the instantiation process
