@@ -100,6 +100,34 @@ The most of patterns are in the object scope.
 - is denoted by a filled circle 
 - when the circle appears at the head of a reference, it means multiple objects are being referenced or aggregated (e.g., Drawing aggregates multiple objects of type Shape).
 
+![img](./img/class_OMT.png)
+
+### Object relationship
+
+- an object diagram shows instances exclusively
+- it provides a snapshot of the objects in a design pattern
+- The objects are named "aSomething", where Something is the class of the object. 
+- our symbol for an object (modified slightly fromstandard OMT) is a rounded box with a line separating the object name from any object references. 
+- arrows indicate the object referenced.
+
+![img](./img/object_OMT.png)
+
+### Interaction relationship
+
+- an interaction diagram shows the order in which requests between objects get executed
+- below is an interaction diagram that shows how a shape gets added to a drawing.
+- time flows from top to bottom in an interaction diagram. 
+- a solid vertical line indicates the lifetime of a particular object. 
+- the naming convention for objects is the same as for object diagrams — the class name prefixed by the letter "a" (e.g., aShape). 
+- if the object doesn't get instantiated until after the beginning of time as recorded in the diagram, then its vertical line appears dashed until the pointof creation.
+- a vertical rectangle shows that an object is active; that is, it is handling a request. The operation can send requests to other objects; these are indicated with a horizontal arrow pointing to the receiving object. 
+- the name of the request is shown above the arrow. 
+- a request to create an object is shown with a dashed arrowheaded line. 
+- a request to the sending object itself points back to the sender.
+- example below shows that the first request is from aCreationTool to create aLineShape. Later, aLineShape is Added to aDrawing, which prompts aDrawing to send a Refresh request to itself. Note that aDrawing sends a Draw request to aLineShape as part of the Refresh operation.
+
+![img](./img/interaction_OMT.png)
+
 
 ## MVC (Model/View/Controller)
 
