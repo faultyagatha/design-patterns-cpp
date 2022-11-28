@@ -84,6 +84,21 @@ The most of patterns are in the object scope.
 
 ## OMT Notation (customised)
 
+### Kinds of relationship
+
+Consider the differences and similarities between the classes of the following objects: pets, dogs, tails, owners.
+
+- owners feed pets, pets please owners (`association`)
+- a tail is a part of both dogs and cats (`aggregation / composition`)
+- a cat is a kind of pet (`inheritance / generalization`)
+
+> Aggregation and Composition are subsets of association meaning they are specific cases of association. In both aggregation and composition object of one class "owns" object of another class. But there is a subtle difference:
+
+> `Aggregation implies a relationship where the child can exist independently of the parent`. Example: Class (parent) and Student (child). Delete the Class and the Students still exist.
+> `Composition implies a relationship where the child cannot exist independent of the parent`. Example: House (parent) and Room (child). Rooms don't exist separate to a House.
+
+[UML reference](https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/)
+
 ### Class relationship
 
 1. `An object reference representing a part-of or aggregation relationship`:
@@ -106,8 +121,8 @@ The most of patterns are in the object scope.
 
 - an object diagram shows instances exclusively
 - it provides a snapshot of the objects in a design pattern
-- The objects are named "aSomething", where Something is the class of the object. 
-- our symbol for an object (modified slightly fromstandard OMT) is a rounded box with a line separating the object name from any object references. 
+- the objects are named "aSomething", where Something is the class of the object. 
+- our symbol for an object (modified slightly from standard OMT) is a rounded box with a line separating the object name from any object references. 
 - arrows indicate the object referenced.
 
 ![img](./img/object_OMT.png)
