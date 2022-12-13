@@ -11,25 +11,27 @@ class MapSite {
 
 class Room : public MapSite {
   public: 
-  Room(int nRooms) {};
+  Room() = default;
+  Room(int roomNumber) {};
 
   MapSite * getSide(Direction dir) const {};
-  void setSite(Direction dir, MapSite* ms) {};
+  void setSide(Direction dir, MapSite* ms) {};
   virtual void enter(){};
 
   private:
   MapSite * sides[4];
-  int nRooms = 0;
+  int roomNum = 0;
 };
 
 class Wall : public MapSite {
   public: 
-  Wall(){};
+  Wall() = default;
   virtual void enter(){};
 };
 
 class Door : public MapSite {
   public: 
+  Door() = default;
   Door(Room * r1, Room * r2) {};
   virtual void enter(){};
   Room * otherSidrFrom(Room *r) {};
@@ -42,9 +44,37 @@ class Door : public MapSite {
 
 class Maze {
   public: 
-  Maze() {};
+  Maze() = default;
   void addRoom(Room * r){};
-  Room * getRoom(int nRoom) const {};
+  Room * getRoom(int roomNumber) const {};
   // ...
 
+};
+
+// Problem: hard-codes the maze layout
+class MazeGame {
+  public:
+  MazeGame() = default;
+  Maze * createMaze() {
+    Maze* aMaze = new Maze;
+    Room* r1 = new Room(1); 
+    Room* r2 = new Room(2);
+    Door* theDoor = new Door(r1, r2);
+
+    aMaze->addRoom(r1);
+    aMaze->addRoom(r2);
+
+    // Can be moved into Room constructor
+    r1->setSide(North, new Wall);
+    r1->setSide(East, theDoor);
+    r1->setSide(South, new Wall);
+    r1->setSide(West, new Wall);
+
+    r2->setSide(North, new Wall);
+    r2->setSide(East, new Wall);
+    r2->setSide(South, new Wall);
+    r2->setSide(West, theDoor);
+
+    return aMaze;
+  }
 };
