@@ -183,7 +183,7 @@ The View-Controller relationship use `Strategy pattern`:
 - help to make a system independent of how its objects are created, composed, and represented
 - `class creational patterns` use inheritance to vary the class that is instantiated
 - `object creational patterns` delegate instantiation to another object
-- become inportant as system evolve to depend more on object composition than class inheritance
+- become inportant as system evolves to depend more on object composition than class inheritance
 - they shif the emphasis away from hard-coding a fixed set of behaviours towards defining a smaller set of fundamental behaviours that can be composed into any number of more complex ones. 
 - 2 recurring themes:
     - 1) creational patterns all encapsulate knowledge about which concrete classes the system uses
