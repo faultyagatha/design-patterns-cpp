@@ -1,4 +1,5 @@
 #include "maze.hpp"
+#include "abstract-factory/mazeFactory.hpp"
 
 int main()
 {

@@ -12,9 +12,9 @@ class MapSite {
 class Room : public MapSite {
   public: 
   Room() = default;
-  Room(int roomNumber) {};
+  Room(int roomNumber): roomNum(roomNumber) {};
 
-  MapSite * getSide(Direction dir) const {};
+  MapSite * getSide(Direction dir) const { return sides[dir]; };
   void setSide(Direction dir, MapSite* ms) {};
   virtual void enter(){};
 
@@ -32,9 +32,14 @@ class Wall : public MapSite {
 class Door : public MapSite {
   public: 
   Door() = default;
-  Door(Room * r1, Room * r2) {};
+  Door(Room * roomFrom, Room * roomTo): r1(roomFrom), r2(roomTo) {};
   virtual void enter(){};
-  Room * otherSidrFrom(Room *r) {};
+  Room * otherSideFrom(Room *r) {
+    if (r1 == r) 
+      return r2;
+    else 
+      return r1;
+   };
 
   private:
   Room * r1 = nullptr;
@@ -48,7 +53,6 @@ class Maze {
   void addRoom(Room * r){};
   Room * getRoom(int roomNumber) const {};
   // ...
-
 };
 
 // Problem: hard-codes the maze layout
