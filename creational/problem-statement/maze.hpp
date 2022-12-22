@@ -1,6 +1,6 @@
 // Example code that demonstrates the problem
 
-enum Direction {North, South, East, West};
+enum Direction { North, South, East, West };
 
 // Abstract class
 class MapSite {

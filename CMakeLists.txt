@@ -3,4 +3,5 @@ project(design-patterns VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory("factory")
+add_subdirectory("creational")
+add_subdirectory("examples")
