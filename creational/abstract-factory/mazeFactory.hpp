@@ -1,3 +1,6 @@
+#pragma once
+#include "../maze.hpp"
+
 /*
 MazeFactory can create components of mazes. 
 It builds rooms, walls, and doors between rooms. 
@@ -14,22 +17,27 @@ class MazeFactory
   public:
   MazeFactory() = default;
 
+  [[nodiscard]]
   virtual Maze* makeMaze() const 
   {
+    // nodiscard will warn or error if no l-value is present
     return new Maze();
   }
 
+  [[nodiscard]]
   virtual Wall* makeWall() const 
   {
     return new Wall();
   }
 
+  [[nodiscard]]
   virtual Room* makeRoom(int roomNumber) const
   {
     return new Room(roomNumber);
   }
 
-  virtual Door* MakeDoor(Room* r1, Room* r2) const
+  [[nodiscard]]
+  virtual Door* makeDoor(Room* r1, Room* r2) const
   { 
     return new Door(r1, r2); 
   }
