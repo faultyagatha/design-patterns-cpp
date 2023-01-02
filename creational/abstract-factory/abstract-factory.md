@@ -49,7 +49,17 @@ Normally a single instance of a `ConcreteFactory` class is created at run-time. 
 
 ## Implementation
 
-1. Factories as singletons. 
+1. `Factories as singletons`. 
 - an application typically needs only one instance of a ConcreteFactory per product family.
 
-2. Creating the products.
+2. `Creating the products`.
+- AbstractFactory only declares an interface for creating products
+- only ConcreteProduct subclasses actually create products
+- most common way is to define a factory method for each product
+- ConcreteFactory will specify its products by overriding the factory method for each product -->
+- requires a new concrete factory subclass for each product family, even if the product families differ only slightly.
+
+> If many product families are possible, the concrete factory can be implemented using the `Prototype pattern`. The concrete factory is initialised with a prototypical instance of each product in the family, and it creates a new product by cloning its prototype. The Prototype-based approach eliminates the need for a new concrete factory class for each new product family.
+
+3. `Defining extensible factories`.
+- 
