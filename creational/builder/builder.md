@@ -23,6 +23,8 @@ Use the Builder pattern when
 - represents the complex object under construction. `ConcreteBuilder` builds the product's internal representation and defines the process by which it's assembled.
 - includes classes that define the constituent parts, including interfaces for assembling the parts into the final result.
 
+![img](../../img/builder_uml.png)
+
 ## Mechanism
 
 - the client creates the `Director object` and configures it with the desired `Builder object`
@@ -30,4 +32,4 @@ Use the Builder pattern when
 - Builder handles requests from the director and adds parts to the product
 - the client retrieves the product from the builder.
 
-
+![img](../../img/builder_interaction_diagram.png)

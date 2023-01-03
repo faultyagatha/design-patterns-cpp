@@ -39,6 +39,24 @@ The most of patterns are in the object scope.
 
 `Delegation` is a process when an object delegates operations to its delegate. It makes it easy to compose behaviours at run-time and to change the way they are composed. `State`, `Strategy`, `Visitor` use delegation.
 
+### Aggregation vs Inheritance
+
+1. `Use inheritance` 
+- if the new class is more or less as the original class
+- the new class is now a subclass of the original class.
+
+2. `Use aggregation`
+- if the new class must have the original class
+- the new class has now the original class as a member.
+
+BUT: 
+
+> If we have used inheritance (or we plan to use it) but we only use part of the interface, or we are forced to override a lot of functionality to keep the correlation logical. Then we have a big nasty smell that indicates that we had to use aggregation.
+
+> If we have used aggregation (or we plan to use it) but we find out we need to copy almost all of the functionality. Then we have a smell that points in the direction of inheritance.
+
+> We should use aggregation if part of the interface is not used or has to be changed to avoid an illogical situation. We only need to use inheritance, if we need almost all of the functionality without major changes. And when in doubt, use Aggregation.
+
 ### Aggregation vs Acquaintance
 
 `Aggregation` implies that one object owns or is responsible for another object (object is part of another object).
