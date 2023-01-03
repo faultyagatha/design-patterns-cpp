@@ -62,4 +62,10 @@ Normally a single instance of a `ConcreteFactory` class is created at run-time. 
 > If many product families are possible, the concrete factory can be implemented using the `Prototype pattern`. The concrete factory is initialised with a prototypical instance of each product in the family, and it creates a new product by cloning its prototype. The Prototype-based approach eliminates the need for a new concrete factory class for each new product family.
 
 3. `Defining extensible factories`.
-- 
+- AbstractFactory usually defines a different operation for each kind of product it can produce
+- the kinds of products are encoded in the operation signatures 
+- adding a new kind of product requires changing the AbstractFactory interface and all the classes that depend on it.
+
+> A more flexible but less safe design is to `add a parameter to operations that create objects`. This parameter specifies the kind of object to be created. It could be a class identifier, an integer, a string, or anything else that identifies the kind of product. With this approach, AbstractFactory only needs a single "Make" operation with a parameter indicating the kind of object to create. This is the technique used in the Prototype- and the class-based abstract factories. It is easier to use in a dynamically typed languages
+
+
