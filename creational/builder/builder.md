@@ -33,3 +33,24 @@ Use the Builder pattern when
 - the client retrieves the product from the builder.
 
 ![img](../../img/builder_interaction_diagram.png)
+
+## Benefits
+
+1. It lets you vary a product's internal representation:
+- the builder object provides the director with abstract interface for constructing the product
+- the interface lets builder hide the representation and internal structure of the product
+- all you have to do to change the product's internal representation is define a new kind of builder.
+
+2. It isolates code for construction and representation:
+- encapsulates the way a complex object is constructed and represented
+- clients needn't know anything about the classes that define the product's internal structure, and such classes don't appear in Builder's interface
+- each ConcreteBuilder contains all the code to create and assemble a particular kind of product
+- the code is written once, and then different Directors can reuse it to build Product variants from the same set of parts.
+
+3. It gives you finer control over the construction process:
+- the product gets constructed step by step under the director's control
+- only when the product is finished does the director retrieve it from the builder.
+
+## Implementation
+
+Typically there's an `abstract Builder class` that defines an operation for each component that a director may ask it to create. The operations do nothing by default. A `ConcreteBuilder class` overrides operations for components it's interested in creating.

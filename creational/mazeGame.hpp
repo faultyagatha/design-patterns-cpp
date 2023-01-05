@@ -2,6 +2,7 @@
 
 #include "maze.hpp"
 #include "abstract-factory/mazeFactory.hpp"
+#include "builder/mazeBuilder.hpp"
 
 
 class MazeGame {
@@ -54,5 +55,17 @@ class MazeGame {
     r2->setSide(West, aDoor);
 
     return aMaze;
+  }
+
+  // 3. Builder
+  Maze* createMaze(MazeBuilder& builder)
+  {
+    builder.buildMaze();
+
+    builder.buildRoom(1);
+    builder.buildRoom(2);
+    builder.buildDoor(1, 2);
+    
+    return builder.getMaze();
   }
 };
