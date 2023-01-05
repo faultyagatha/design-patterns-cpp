@@ -15,7 +15,7 @@ Subclasses of MazeBuilder do the actual work.
 */
 
 class MazeBuilder {
-public:
+  public:
   // All the maze-building operations of MazeBuilder do nothing by default. 
   // They're not declared pure virtual to let derived classes 
   // override only those methods in which they're interested.
@@ -27,5 +27,46 @@ public:
   virtual Maze* getMaze() { return 0; }
 
   protected:
-    MazeBuilder() = default;
+  MazeBuilder() = default;
+};
+
+class StandardMazeBuilder : public MazeBuilder {
+  public:
+  StandardMazeBuilder() = default;
+
+  virtual void buildMaze() 
+  {
+    currentMaze = new Maze();
+  }
+
+  // Creates a room and builds the walls around it
+  virtual void buildRoom(int roomNumber) 
+  {
+    if (!currentMaze->getRoom(roomNumber)) 
+    {
+      Room* room = new Room(roomNumber);
+      currentMaze->addRoom(room);
+      room->setSide(North, new Wall());
+      room->setSide(South, new Wall());
+      room->setSide(East, new Wall());
+      room->setSide(West, new Wall());
+    } 
+  }
+
+  virtual void buildDoor(int roomFrom, int roomTo) 
+  {
+    Room* r1 = currentMaze->getRoom(roomFrom);
+    Room* r2 = currentMaze->getRoom(roomTo);
+    Door* d = new Door(r1, r2);
+    
+    r1->setSide(commonWall(r1,r2), d);
+    r2->setSide(commonWall(r2,r1), d);
+  }
+
+  [[nodiscard]]
+  virtual Maze* getMaze() { return currentMaze; }
+
+  private:
+  Direction commonWall(Room* roomFrom, Room* roomTo) {};
+  Maze* currentMaze = 0;
 };

@@ -34,6 +34,7 @@ class MazeGame {
   }
 
   // 2. Abstract Factory
+  [[noexcept]]
   Maze* createMaze(MazeFactory &factory)
   {
     Maze* aMaze = factory.makeMaze();
@@ -58,6 +59,7 @@ class MazeGame {
   }
 
   // 3. Builder
+  [[noexcept]]
   Maze* createMaze(MazeBuilder& builder)
   {
     builder.buildMaze();

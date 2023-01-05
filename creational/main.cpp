@@ -10,9 +10,16 @@ int main()
   MazeGame *mazeGame1 = new MazeGame();
   mazeGame1->createMaze();
 
+  Maze* maze2;
   MazeGame *mazeGame2 = new MazeGame();
   MazeFactory *factory = new MazeFactory();
-  mazeGame2->createMaze(*factory);
+  maze2 = mazeGame2->createMaze(*factory);
+
+  // Clients use CreateMaze in conjunction with StandardMazeBuilder to create a maze
+  Maze* maze3;
+  MazeGame *mazeGame3 = new MazeGame();
+  StandardMazeBuilder builder;
+  maze3 = mazeGame3->createMaze(builder);
 
   return 0;
 }
