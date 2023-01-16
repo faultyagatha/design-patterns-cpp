@@ -28,3 +28,10 @@ Suppose you wanted to reuse an existing maze layout for a new game containing en
 
 > `If CreateMaze is parameterized by various prototypical` room, door, and wall `objects`, which it then copies and adds to the maze, then you can change the maze's composition by replacing these prototypical objects with different ones. This is an example of the `Prototype` pattern.
 
+## Relations
+
+- `Abstract factory` is often implemented with `Factory` methods.
+- `Factory` methods are usually called within `Template methods`.
+- `Prototypes` often require an Initialise() operation on the Product class. Creator uses Initialise() to initialise the object. `Factory` method doesn't require Initialise().
+
+
