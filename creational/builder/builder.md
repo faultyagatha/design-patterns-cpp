@@ -51,6 +51,8 @@ Use the Builder pattern when
 - the product gets constructed step by step under the director's control
 - only when the product is finished does the director retrieve it from the builder.
 
+> Builder solves what is known as `telescopic constructor` anti-pattern: a pattern, when an object can be constructed using many different constructors with various parameters. 
+
 ## Implementation
 
 Typically there's an `abstract Builder class` that defines an operation for each component that a director may ask it to create. The operations do nothing by default. A `ConcreteBuilder class` overrides operations for components it's interested in creating.

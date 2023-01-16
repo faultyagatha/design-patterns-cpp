@@ -35,6 +35,8 @@ Normally a single instance of a `ConcreteFactory` class is created at run-time. 
 
 `AbstractFactory` defers creation of product objects to its ConcreteFactory subclass.
 
+![img](../../img/abstract_factory_uml.png)
+
 ## Benefits
 
 1. Isolates concrete classes: 

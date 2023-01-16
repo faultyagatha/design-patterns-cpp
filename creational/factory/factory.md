@@ -23,7 +23,7 @@ Use the Factory pattern when
 4. `ConcreteCreator`
 - overrides the factory method to return an instance of a ConcreteProduct.
 
-![img](../../img/builder_uml.png)
+![img](../../img/factory_method_uml.png)
 
 ## Benefits
 
@@ -43,4 +43,18 @@ Use the Factory pattern when
 
 ## Implementation
 
-1. 
+1. Case 1: the `Creator class is an abstract class and does not provide an implementation for the factory method` it declares:
+
+- there is no reasonable default --> requires subclasses to define an implementation
+- but there is no need to instantiate unforseeable classes
+
+2. Case 2: the `Creator is a concrete class and provides a default implementation for the factory method`:
+
+- the concrete Creator uses the factory method primarily for flexibility
+- main rule: "Create objects in a separate operation so that subclasses can override the way they're created." --> ensures that designers of subclasses can change the class of objects their parent class instantiates if necessary.
+
+3. `Parameterised factory methods`:
+
+- lets the factory method create multiple kinds of products
+- the factory method takes a parameter that identifies the kind of object to create
+- all objects the factory method creates will share the Product interface.
