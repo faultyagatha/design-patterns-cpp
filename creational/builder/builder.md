@@ -53,6 +53,13 @@ Use the Builder pattern when
 
 > Builder solves what is known as `telescopic constructor` anti-pattern: a pattern, when an object can be constructed using many different constructors with various parameters. 
 
+> The purpose of Builder: set only necessary fields in some object and keep remaining fields set to default values (!!). Presence of reasonable defaults for remaining fields is very important.
+
 ## Implementation
 
 Typically there's an `abstract Builder class` that defines an operation for each component that a director may ask it to create. The operations do nothing by default. A `ConcreteBuilder class` overrides operations for components it's interested in creating.
+
+## TODO
+
+- Fluent Builder
+- builder with callbacks (is it possible in C++?)
