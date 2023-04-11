@@ -193,5 +193,3 @@ The View-Controller relationship use `Strategy pattern`:
 ## Memento
 
 - describes how to encapsulate and save the internal state of an object so that the object can be restored to that state later
-
-
